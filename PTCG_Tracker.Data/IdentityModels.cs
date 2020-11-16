@@ -29,5 +29,17 @@ namespace PTCG_Tracker.Data
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<Card> Cards { get; set; }
+
+        public DbSet<Collection> Collections { get; set; }
+
+        public DbSet<Attack> Attacks { get; set; }
+
+        public DbSet<Ability> Abilities { get; set; }
+
+        public DbSet<Weakness> Weaknesses { get; set; }
+
+        public DbSet<Resistance> Resistances { get; set; }
     }
 }
