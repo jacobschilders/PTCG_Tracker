@@ -53,17 +53,12 @@ namespace PTCG_Tracker.Data
         [ForeignKey(nameof(AbilityId))]
         public virtual Ability Ability { get; set; }
 
-        //Connection to Collection Table
-        public int CollectionId { get; set; }
-        [ForeignKey(nameof(CollectionId))]
-        public virtual Collection Collection { get; set; }
-
         public string Artist { get; set; }
 
         public string Rarity { get; set; }
 
 
-
+        public ICollection<CardCollection> CardCollections { get; set; }
 
 
     }

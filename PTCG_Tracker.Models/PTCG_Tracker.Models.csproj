@@ -54,11 +54,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attack\AttackCreate.cs" />
+    <Compile Include="Card\CardCreate.cs" />
+    <Compile Include="Card\CardDetails.cs" />
+    <Compile Include="Card\CardEdit.cs" />
+    <Compile Include="Card\CardListItem.cs" />
+    <Compile Include="Collection\CollectionCreate.cs" />
+    <Compile Include="Collection\CollectionDetails.cs" />
+    <Compile Include="Collection\CollectionEdit.cs" />
+    <Compile Include="Collection\CollectionListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Ability\" />
+    <Folder Include="Resistance\" />
+    <Folder Include="Weakness\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

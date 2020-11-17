@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using PTCG_Tracker.Data;
 using PTCG_Tracker.Models;
 
 namespace PTCG_Tracker.Controllers
