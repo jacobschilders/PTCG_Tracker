@@ -28,8 +28,6 @@ namespace PTCG_Tracker.Models.Card
 
         public int RetreatCost { get; set; }
 
-        public int AttackId { get; set; }
-
         public int SetNumber { get; set; }
 
         public string Series { get; set; }

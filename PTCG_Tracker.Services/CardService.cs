@@ -11,6 +11,7 @@ namespace PTCG_Tracker.Services
 {
     public class CardService
     {
+      
 
         public bool CreateCard(CardCreate model)
         {
@@ -65,7 +66,7 @@ namespace PTCG_Tracker.Services
                     ID = c.ID,
                     Name = c.Name,
                     Rarity = c.Rarity
-                }).ToList();
+                }).ToArray();
             }
         }
 

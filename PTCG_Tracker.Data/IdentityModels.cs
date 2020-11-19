@@ -59,6 +59,7 @@ namespace PTCG_Tracker.Data
 
         }
 
+        public System.Data.Entity.DbSet<PTCG_Tracker.Models.Card.CardListItem> CardListItems { get; set; }
     }
 
     public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
