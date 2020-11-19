@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PTCG_Tracker.Models.CardCollection;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

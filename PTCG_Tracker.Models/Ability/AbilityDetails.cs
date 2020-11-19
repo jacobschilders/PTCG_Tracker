@@ -4,17 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PTCG_Tracker.Models.Attack
+namespace PTCG_Tracker.Models.Ability
 {
-    public class AttackCreate
+    public class AbilityDetails
     {
+        public int Id { get; set; }
+
         public string Name { get; set; }
 
         public string Text { get; set; }
 
-        public string Damage { get; set; }
-
-        public List<string> EnergyCost { get; set; }
+        public string Type { get; set; }
 
     }
 }

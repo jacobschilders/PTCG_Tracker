@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PTCG_Tracker.Models.CardCollection;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -30,7 +31,7 @@ namespace PTCG_Tracker.Data
         //Connection to Attack Table
         public int AttackId { get; set; }
         [ForeignKey(nameof(AttackId))]
-        public virtual Attack Attack { get; set; }
+        public virtual List<Attack> Attacks { get; set; }
 
         public int SetNumber { get; set; }
 
@@ -59,6 +60,8 @@ namespace PTCG_Tracker.Data
 
 
         public ICollection<CardCollection> CardCollections { get; set; }
+
+        public ICollection<CardCollectionDetails> CollectionDetails { get; set; }
 
 
     }

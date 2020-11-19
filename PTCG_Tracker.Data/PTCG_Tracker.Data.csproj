@@ -68,5 +68,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PTCG_Tracker.Models\PTCG_Tracker.Models.csproj">
+      <Project>{24B04D27-632E-4454-992D-25D7CC46373A}</Project>
+      <Name>PTCG_Tracker.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

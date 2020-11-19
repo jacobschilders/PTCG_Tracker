@@ -1,4 +1,5 @@
-﻿using PTCG_Tracker.Models.Collection;
+﻿using PTCG_Tracker.Models.CardCollection;
+using PTCG_Tracker.Models.Collection;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -46,5 +47,7 @@ namespace PTCG_Tracker.Models.Card
         public string Rarity { get; set; }
 
         public ICollection<CollectionDetails> Collections { get; set; }
+
+        public ICollection<CardCollectionDetails> CollectionDetails { get; set; }
     }
 }

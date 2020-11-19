@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace PTCG_Tracker.Models.Attack
 {
-    public class AttackCreate
+    public class AttackListItem
     {
+        public int Id { get; set; }
         public string Name { get; set; }
 
         public string Text { get; set; }

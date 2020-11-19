@@ -54,25 +54,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ability\AbilityCreate.cs" />
+    <Compile Include="Ability\AbilityDetails.cs" />
+    <Compile Include="Ability\AbilityEdit.cs" />
+    <Compile Include="Ability\AbilityListItem.cs" />
     <Compile Include="Attack\AttackCreate.cs" />
+    <Compile Include="Attack\AttackDetails.cs" />
+    <Compile Include="Attack\AttackEdit.cs" />
+    <Compile Include="Attack\AttackListItem.cs" />
+    <Compile Include="CardCollection\CardCollectionCreate.cs" />
+    <Compile Include="CardCollection\CardCollectionDetails.cs" />
+    <Compile Include="CardCollection\CardCollectionListItem.cs" />
+    <Compile Include="CardCollection\CardCollectionSearchParams.cs" />
     <Compile Include="Card\CardCreate.cs" />
     <Compile Include="Card\CardDetails.cs" />
     <Compile Include="Card\CardEdit.cs" />
     <Compile Include="Card\CardListItem.cs" />
+    <Compile Include="Card\CardSearchParams.cs" />
     <Compile Include="Collection\CollectionCreate.cs" />
     <Compile Include="Collection\CollectionDetails.cs" />
     <Compile Include="Collection\CollectionEdit.cs" />
     <Compile Include="Collection\CollectionListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resistance\ResistanceCreate.cs" />
+    <Compile Include="Resistance\ResistanceDetails.cs" />
+    <Compile Include="Resistance\ResistanceEdit.cs" />
+    <Compile Include="Resistance\ResistanceListItem.cs" />
+    <Compile Include="Weakness\WeaknessCreate.cs" />
+    <Compile Include="Weakness\WeaknessDetails.cs" />
+    <Compile Include="Weakness\WeaknessEdit.cs" />
+    <Compile Include="Weakness\WeaknessListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Ability\" />
-    <Folder Include="Resistance\" />
-    <Folder Include="Weakness\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PTCG_Tracker.Models.Attack
 {
-    public class AttackCreate
+    public class AttackEdit
     {
         public string Name { get; set; }
 
