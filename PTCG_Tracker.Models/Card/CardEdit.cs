@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace PTCG_Tracker.Models.Card
 {
     public class CardEdit
@@ -23,8 +24,6 @@ namespace PTCG_Tracker.Models.Card
             public int HP { get; set; }
 
             public int RetreatCost { get; set; }
-
-            public int AttackId { get; set; }
 
             public int SetNumber { get; set; }
 

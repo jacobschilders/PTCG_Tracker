@@ -1,6 +1,5 @@
 ﻿using PTCG_Tracker.Data;
 using PTCG_Tracker.Models.Card;
-using PTCG_Tracker.Models.CardCollection;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -25,7 +24,6 @@ namespace PTCG_Tracker.Services
                 SubType = model.SubType,
                 HP = model.HP,
                 RetreatCost = model.RetreateCost,
-                AttackId = model.AttackId,
                 SetNumber = model.SetNumber,
                 Series = model.Series,
                 Set = model.Set,
@@ -33,7 +31,8 @@ namespace PTCG_Tracker.Services
                 ResistanceId = model.ResistanceId,
                 AbilityId = model.AbilityId,
                 Artist = model.Artist,
-                Rarity = model.Rarity
+                Rarity = model.Rarity,
+                //How to add attacks to card? ICollection<Attack>
             };
 
             using (var ctx = new ApplicationDbContext())
@@ -42,6 +41,9 @@ namespace PTCG_Tracker.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        //Add Card to Collection (find collection then add card to it)
+
 
         public IEnumerable<CardListItem> GetCards(CardSearchParams model)
         {
@@ -74,7 +76,6 @@ namespace PTCG_Tracker.Services
                 var card = ctx.Cards.Where(c => c.ID == id)
                     .Include(c => c.Weakness)
                     .Include(c => c.Resistance)
-                    .Include(c => c.CardCollections)
                     .Include(c => c.Attacks)
                     .FirstOrDefault();
 
@@ -89,7 +90,6 @@ namespace PTCG_Tracker.Services
                     SuperType = card.SuperType,
                     HP = card.HP,
                     RetreatCost = card.RetreatCost,
-                    AttackId = card.AttackId,
                     SetNumber = card.SetNumber,
                     Series = card.Series,
                     Set = card.Set,
@@ -98,7 +98,8 @@ namespace PTCG_Tracker.Services
                     AbilityId = card.AbilityId,
                     Artist = card.Artist,
                     Rarity = card.Rarity,
-                    Collections = (ICollection<Models.Collection.CollectionDetails>)card.CardCollections
+                    Collections = (ICollection<Models.Collection.CollectionDetails>)card.Collections,
+                    Attacks = (ICollection<Models.Attack.AttackDetails>)card.Attacks
                 };
             }
         }
@@ -120,7 +121,6 @@ namespace PTCG_Tracker.Services
                 card.SubType = model.SubType;
                 card.HP = model.HP;
                 card.RetreatCost = model.RetreatCost;
-                card.AttackId = model.AttackId;
                 card.SetNumber = model.SetNumber;
                 card.Series = model.Series;
                 card.Set = model.Set;
@@ -129,7 +129,7 @@ namespace PTCG_Tracker.Services
                 card.AbilityId = model.AbilityId;
                 card.Artist = model.Artist;
                 card.Rarity = model.Rarity;
-                //do I need to edit collections here? 
+                // how to edit Attakcs
 
                 return ctx.SaveChanges() == 1;
             }

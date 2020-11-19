@@ -62,10 +62,6 @@
     <Compile Include="Attack\AttackDetails.cs" />
     <Compile Include="Attack\AttackEdit.cs" />
     <Compile Include="Attack\AttackListItem.cs" />
-    <Compile Include="CardCollection\CardCollectionCreate.cs" />
-    <Compile Include="CardCollection\CardCollectionDetails.cs" />
-    <Compile Include="CardCollection\CardCollectionListItem.cs" />
-    <Compile Include="CardCollection\CardCollectionSearchParams.cs" />
     <Compile Include="Card\CardCreate.cs" />
     <Compile Include="Card\CardDetails.cs" />
     <Compile Include="Card\CardEdit.cs" />

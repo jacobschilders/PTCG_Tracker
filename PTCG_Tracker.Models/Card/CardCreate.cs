@@ -42,5 +42,6 @@ namespace PTCG_Tracker.Models.Card
 
         public string Rarity { get; set; }
 
+        
     }
 }

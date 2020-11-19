@@ -44,7 +44,7 @@ namespace PTCG_Tracker.Data
 
         public DbSet<Resistance> Resistances { get; set; }
 
-        public DbSet<CardCollection> CardCollections { get; set; }
+        //public DbSet<CardCollection> CardCollections { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -53,8 +53,8 @@ namespace PTCG_Tracker.Data
                 .Configurations
                 .Add(new IdentityUserLoginConfiguration())
                 .Add(new IdentityUserRoleConfiguration());
-            modelBuilder.Entity<CardCollection>()
-                .HasKey(cc => new { cc.CardId, cc.CollectionId });
+            //modelBuilder.Entity<CardCollection>()
+            //    .HasKey(cc => new { cc.CardId, cc.CollectionId });
           
 
         }

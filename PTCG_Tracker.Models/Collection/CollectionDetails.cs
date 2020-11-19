@@ -1,4 +1,5 @@
-﻿using PTCG_Tracker.Models.CardCollection;
+﻿
+using PTCG_Tracker.Models.Card;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,7 @@ namespace PTCG_Tracker.Models.Collection
 
         public int CardsUntilComplete { get; set; }
 
-        public ICollection<CardCollectionDetails> CardCollections { get; set; }
+        public ICollection<CardDetails> Cards { get; set; }
+
     }
 }

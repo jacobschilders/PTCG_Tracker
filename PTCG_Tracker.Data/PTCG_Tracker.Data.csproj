@@ -57,7 +57,6 @@
     <Compile Include="Ability.cs" />
     <Compile Include="Attack.cs" />
     <Compile Include="Card.cs" />
-    <Compile Include="CardCollection.cs" />
     <Compile Include="Collection.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

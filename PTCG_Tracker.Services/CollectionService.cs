@@ -27,6 +27,8 @@ namespace PTCG_Tracker.Services
             }
         }
 
+        //update cards in collection (add and remove)
+
         public IEnumerable<CollectionListItem> GetAllCollections()
         {
             using(var ctx = new ApplicationDbContext())

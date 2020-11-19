@@ -54,9 +54,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbilityService.cs" />
+    <Compile Include="AttackService.cs" />
     <Compile Include="CardService.cs" />
     <Compile Include="CollectionService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResistanceService.cs" />
+    <Compile Include="WeaknessService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -1,4 +1,4 @@
-﻿using PTCG_Tracker.Models.CardCollection;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -28,10 +28,6 @@ namespace PTCG_Tracker.Data
 
         public int RetreatCost { get; set; }
 
-        //Connection to Attack Table
-        public int AttackId { get; set; }
-        [ForeignKey(nameof(AttackId))]
-        public virtual List<Attack> Attacks { get; set; }
 
         public int SetNumber { get; set; }
 
@@ -58,10 +54,9 @@ namespace PTCG_Tracker.Data
 
         public string Rarity { get; set; }
 
+        public ICollection<Attack> Attacks { get; set; }
 
-        public ICollection<CardCollection> CardCollections { get; set; }
-
-        public ICollection<CardCollectionDetails> CollectionDetails { get; set; }
+        public ICollection<Collection> Collections { get; set; }
 
 
     }
