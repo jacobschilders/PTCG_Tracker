@@ -23,6 +23,8 @@ namespace PTCG_Tracker.Data
 
         public int CardsUntilComplete { get; set; }
 
+        public DateTimeOffset ModifiedAt { get; set; }
+
         public ICollection<CardCollection> CardCollections { get; set; }
     }
 }
