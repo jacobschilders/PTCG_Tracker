@@ -1,0 +1,64 @@
+﻿@model PTCG_Tracker.Models.Collection.CollectionDetails
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>CollectionDetails</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Public)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Public)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Complete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Complete)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CardsInCollection)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CardsInCollection)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CardsUntilComplete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CardsUntilComplete)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

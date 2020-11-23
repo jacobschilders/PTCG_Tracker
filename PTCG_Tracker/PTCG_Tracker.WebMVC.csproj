@@ -167,10 +167,15 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AbilityController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AttackController.cs" />
     <Compile Include="Controllers\CardController.cs" />
+    <Compile Include="Controllers\CollectionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ResistanceController.cs" />
+    <Compile Include="Controllers\WeaknessController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -236,6 +241,35 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Card\Index.cshtml" />
+    <Content Include="Views\Card\Create.cshtml" />
+    <Content Include="Views\Card\Details.cshtml" />
+    <Content Include="Views\Card\Edit.cshtml" />
+    <Content Include="Views\Card\Delete.cshtml" />
+    <Content Include="Views\Collection\Index.cshtml" />
+    <Content Include="Views\Collection\Create.cshtml" />
+    <Content Include="Views\Collection\Details.cshtml" />
+    <Content Include="Views\Collection\Edit.cshtml" />
+    <Content Include="Views\Collection\Delete.cshtml" />
+    <Content Include="Views\Attack\Index.cshtml" />
+    <Content Include="Views\Attack\Create.cshtml" />
+    <Content Include="Views\Attack\Details.cshtml" />
+    <Content Include="Views\Attack\Edit.cshtml" />
+    <Content Include="Views\Attack\Delete.cshtml" />
+    <Content Include="Views\Ability\Index.cshtml" />
+    <Content Include="Views\Ability\Create.cshtml" />
+    <Content Include="Views\Ability\Details.cshtml" />
+    <Content Include="Views\Ability\Edit.cshtml" />
+    <Content Include="Views\Ability\Delete.cshtml" />
+    <Content Include="Views\Resistance\Index.cshtml" />
+    <Content Include="Views\Resistance\Create.cshtml" />
+    <Content Include="Views\Resistance\Details.cshtml" />
+    <Content Include="Views\Resistance\Edit.cshtml" />
+    <Content Include="Views\Resistance\Delete.cshtml" />
+    <Content Include="Views\Weakness\Index.cshtml" />
+    <Content Include="Views\Weakness\Create.cshtml" />
+    <Content Include="Views\Weakness\Details.cshtml" />
+    <Content Include="Views\Weakness\Edit.cshtml" />
+    <Content Include="Views\Weakness\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,138 @@
+﻿@model PTCG_Tracker.Models.Card.CardDetails
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CardDetails</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageURL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImageURL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SuperType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SuperType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RetreatCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RetreatCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SetNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SetNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Series)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Series)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Set)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Set)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WeaknessId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WeaknessId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResistanceId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResistanceId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AbilityId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AbilityId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Artist)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Artist)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rarity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rarity)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

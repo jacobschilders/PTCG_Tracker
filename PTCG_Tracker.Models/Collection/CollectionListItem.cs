@@ -9,11 +9,23 @@ namespace PTCG_Tracker.Models.Collection
 {
     public class CollectionListItem
     {
+        [Key]
         public int Id { get; set; }
 
         [Display(Name = "Collection Name")]
         public string Name { get; set; }
         [Display(Name = "Number of Cards in Collection")]
         public int CardsInCollection { get; set; }
+
+        [Display(Name = "Number of Cards needed to complete collection")]
+        public int CardsUntilComplete { get; set; }
+
+        [Display(Name = "The Collection is Public")]
+        public bool Public { get; set; }
+
+        [Display(Name = "The Collection is Complete")]
+        public bool Complete { get; set; }
+
+        public DateTimeOffset ModifiedAt { get; set; }
     }
 }

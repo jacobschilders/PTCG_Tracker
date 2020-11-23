@@ -18,6 +18,10 @@ namespace PTCG_Tracker.Models.Collection
 
         public int CardsUntilComplete { get; set; }
 
+        public bool Complete { get; set; }
+
+        public int CardsInCollection { get; set; }
+
         public DateTimeOffset ModifiedAt { get; set; }
     }
 }

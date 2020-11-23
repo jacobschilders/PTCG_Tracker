@@ -15,6 +15,7 @@ namespace PTCG_Tracker.Services
         {
             var entity = new Collection
             {
+                Id = model.Id,
                 Name = model.Name,
                 Public = model.Public,
                 CardsUntilComplete = model.CardsUntilComplete
@@ -55,7 +56,12 @@ namespace PTCG_Tracker.Services
                     {
                         Id = foundCollection.Id,
                         Name = foundCollection.Name,
-                        CardsInCollection = foundCollection.CardsInCollection
+                        Public = foundCollection.Public,
+                        CardsInCollection = foundCollection.CardsInCollection,
+                        CardsUntilComplete = foundCollection.CardsUntilComplete,
+                        Complete = foundCollection.Complete,
+                        ModifiedAt = foundCollection.ModifiedAt
+                        
                     }
                     : null;
             }
