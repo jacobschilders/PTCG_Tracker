@@ -59,49 +59,49 @@ namespace PTCG_Tracker.Data
 
         }
 
-        public System.Data.Entity.DbSet<PTCG_Tracker.Models.Card.CardListItem> CardListItems { get; set; }
+        //public System.Data.Entity.DbSet<PTCG_Tracker.Models.Card.CardListItem> CardListItems { get; set; }
 
-        public System.Data.Entity.DbSet<PTCG_Tracker.Models.Card.CardCreate> CardCreates { get; set; }
+        //public System.Data.Entity.DbSet<PTCG_Tracker.Models.Card.CardCreate> CardCreates { get; set; }
 
-        public System.Data.Entity.DbSet<PTCG_Tracker.Models.Card.CardDetails> CardDetails { get; set; }
+        //public System.Data.Entity.DbSet<PTCG_Tracker.Models.Card.CardDetails> CardDetails { get; set; }
 
-        public System.Data.Entity.DbSet<PTCG_Tracker.Models.Card.CardEdit> CardEdits { get; set; }
+        //public System.Data.Entity.DbSet<PTCG_Tracker.Models.Card.CardEdit> CardEdits { get; set; }
 
-        public System.Data.Entity.DbSet<PTCG_Tracker.Models.Collection.CollectionCreate> CollectionCreates { get; set; }
+        //public System.Data.Entity.DbSet<PTCG_Tracker.Models.Collection.CollectionCreate> CollectionCreates { get; set; }
 
-        public System.Data.Entity.DbSet<PTCG_Tracker.Models.Collection.CollectionDetails> CollectionDetails { get; set; }
+        //public System.Data.Entity.DbSet<PTCG_Tracker.Models.Collection.CollectionDetails> CollectionDetails { get; set; }
 
-        public System.Data.Entity.DbSet<PTCG_Tracker.Models.Collection.CollectionEdit> CollectionEdits { get; set; }
+        //public System.Data.Entity.DbSet<PTCG_Tracker.Models.Collection.CollectionEdit> CollectionEdits { get; set; }
 
-        public System.Data.Entity.DbSet<PTCG_Tracker.Models.Attack.AttackListItem> AttackListItems { get; set; }
+        //public System.Data.Entity.DbSet<PTCG_Tracker.Models.Attack.AttackListItem> AttackListItems { get; set; }
 
-        public System.Data.Entity.DbSet<PTCG_Tracker.Models.Attack.AttackCreate> AttackCreates { get; set; }
+        //public System.Data.Entity.DbSet<PTCG_Tracker.Models.Attack.AttackCreate> AttackCreates { get; set; }
 
-        public System.Data.Entity.DbSet<PTCG_Tracker.Models.Attack.AttackDetails> AttackDetails { get; set; }
+        //public System.Data.Entity.DbSet<PTCG_Tracker.Models.Attack.AttackDetails> AttackDetails { get; set; }
 
-        public System.Data.Entity.DbSet<PTCG_Tracker.Models.Attack.AttackEdit> AttackEdits { get; set; }
+        //public System.Data.Entity.DbSet<PTCG_Tracker.Models.Attack.AttackEdit> AttackEdits { get; set; }
 
-        public System.Data.Entity.DbSet<PTCG_Tracker.Models.Ability.AbilityListItem> AbilityListItems { get; set; }
+        //public System.Data.Entity.DbSet<PTCG_Tracker.Models.Ability.AbilityListItem> AbilityListItems { get; set; }
 
-        public System.Data.Entity.DbSet<PTCG_Tracker.Models.Ability.AbilityCreate> AbilityCreates { get; set; }
+        //public System.Data.Entity.DbSet<PTCG_Tracker.Models.Ability.AbilityCreate> AbilityCreates { get; set; }
 
-        public System.Data.Entity.DbSet<PTCG_Tracker.Models.Ability.AbilityDetails> AbilityDetails { get; set; }
+        //public System.Data.Entity.DbSet<PTCG_Tracker.Models.Ability.AbilityDetails> AbilityDetails { get; set; }
 
-        public System.Data.Entity.DbSet<PTCG_Tracker.Models.Ability.AbilityEdit> AbilityEdits { get; set; }
+        //public System.Data.Entity.DbSet<PTCG_Tracker.Models.Ability.AbilityEdit> AbilityEdits { get; set; }
 
-        public System.Data.Entity.DbSet<PTCG_Tracker.Models.Resistance.ResistanceListItem> ResistanceListItems { get; set; }
+        //public System.Data.Entity.DbSet<PTCG_Tracker.Models.Resistance.ResistanceListItem> ResistanceListItems { get; set; }
 
-        public System.Data.Entity.DbSet<PTCG_Tracker.Models.Resistance.ResistanceCreate> ResistanceCreates { get; set; }
+        //public System.Data.Entity.DbSet<PTCG_Tracker.Models.Resistance.ResistanceCreate> ResistanceCreates { get; set; }
 
-        public System.Data.Entity.DbSet<PTCG_Tracker.Models.Resistance.ResistanceDetails> ResistanceDetails { get; set; }
+        //public System.Data.Entity.DbSet<PTCG_Tracker.Models.Resistance.ResistanceDetails> ResistanceDetails { get; set; }
 
-        public System.Data.Entity.DbSet<PTCG_Tracker.Models.Resistance.ResistanceEdit> ResistanceEdits { get; set; }
+        //public System.Data.Entity.DbSet<PTCG_Tracker.Models.Resistance.ResistanceEdit> ResistanceEdits { get; set; }
 
-        public System.Data.Entity.DbSet<PTCG_Tracker.Models.Weakness.WeaknessListItem> WeaknessListItems { get; set; }
+        //public System.Data.Entity.DbSet<PTCG_Tracker.Models.Weakness.WeaknessListItem> WeaknessListItems { get; set; }
 
-        public System.Data.Entity.DbSet<PTCG_Tracker.Models.Weakness.WeaknessCreate> WeaknessCreates { get; set; }
+        //public System.Data.Entity.DbSet<PTCG_Tracker.Models.Weakness.WeaknessCreate> WeaknessCreates { get; set; }
 
-        public System.Data.Entity.DbSet<PTCG_Tracker.Models.Weakness.WeaknessDetails> WeaknessDetails { get; set; }
+        //public System.Data.Entity.DbSet<PTCG_Tracker.Models.Weakness.WeaknessDetails> WeaknessDetails { get; set; }
     }
 
     public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>

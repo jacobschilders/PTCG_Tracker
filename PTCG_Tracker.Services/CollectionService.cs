@@ -29,7 +29,21 @@ namespace PTCG_Tracker.Services
         }
 
         //update cards in collection (add and remove)
+        //public bool UpdateCardsInCollection(CollectionEdit model)
+        //{
+        //    using(var ctx = new ApplicationDbContext())
+        //    {
+        //        var entity = ctx.Collections.Where(c => c.Id == model.Id)
+        //            .FirstOrDefault();
+        //        if (entity == null)
+        //            return false;
 
+        //        var cards = new List<Card>();
+                
+
+        //        return ctx.SaveChanges() == 1;
+        //    }
+        //}
         public IEnumerable<CollectionListItem> GetAllCollections()
         {
             using(var ctx = new ApplicationDbContext())

@@ -33,8 +33,11 @@ namespace PTCG_Tracker.Services
                 AbilityId = model.AbilityId,
                 Artist = model.Artist,
                 Rarity = model.Rarity,
+                
                 //How to add attacks to card? ICollection<Attack>
             };
+
+            //entity.addtoAttackList <Research adding Multiple>
 
             using (var ctx = new ApplicationDbContext())
             {

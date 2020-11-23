@@ -30,8 +30,11 @@ namespace PTCG_Tracker.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                return ctx.Abilities
+                var query=
+                    ctx
+                    .Abilities
                     .Select(a => new AbilityListItem
+                    
                     {
                         Id = a.Id,
                         Name = a.Name,
@@ -39,7 +42,8 @@ namespace PTCG_Tracker.Services
                         Type = a.Type
                         
                     }
-                    ).ToList();
+                    );
+                return query.ToList();
             }
         }
 
