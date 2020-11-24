@@ -75,7 +75,7 @@ namespace PTCG_Tracker.Controllers
         {
             if (!ModelState.IsValid) return View(model);
 
-            if (model.Id != id)
+            if (model.WeaknessId != id)
             {
                 ModelState.AddModelError("", "Id Mismatch");
                 return View(model);

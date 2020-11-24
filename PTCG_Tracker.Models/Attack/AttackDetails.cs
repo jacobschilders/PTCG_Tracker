@@ -8,7 +8,7 @@ namespace PTCG_Tracker.Models.Attack
 {
     public class AttackDetails
     {
-        public int Id { get; set; }
+        public int AttackId { get; set; }
         public string Name { get; set; }
 
         public string Text { get; set; }

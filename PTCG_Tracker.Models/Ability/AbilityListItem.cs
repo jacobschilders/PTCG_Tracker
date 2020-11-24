@@ -8,7 +8,7 @@ namespace PTCG_Tracker.Models.Ability
 {
     public class AbilityListItem
     {
-        public int Id { get; set; }
+        public int AbilityId { get; set; }
 
         public string Name { get; set; }
 

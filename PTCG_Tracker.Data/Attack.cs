@@ -10,7 +10,7 @@ namespace PTCG_Tracker.Data
     public class Attack
     {
         [Key]
-        public int Id { get; set; }
+        public int AttackId { get; set; }
         [Required]
         public string Name { get; set; }
 

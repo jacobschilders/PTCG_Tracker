@@ -12,7 +12,7 @@ namespace PTCG_Tracker.Data
     public class Card
     {
         [Key]
-        public string ID { get; set; }
+        public string CardId { get; set; }
         [Required]
         public string Name { get; set; }
 
@@ -55,8 +55,13 @@ namespace PTCG_Tracker.Data
         public string Rarity { get; set; }
 
         public ICollection<Attack> Attacks { get; set; }
-
-        public ICollection<Collection> Collections { get; set; }
+       
+         public ICollection<Collection> Collections { get; set; }
+        public Card()
+        {
+            Collections = new HashSet<Collection>();
+            Attacks = new HashSet<Attack>();
+        }
 
 
     }

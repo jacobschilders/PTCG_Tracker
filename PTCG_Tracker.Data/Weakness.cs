@@ -10,7 +10,7 @@ namespace PTCG_Tracker.Data
     public class Weakness
     {
         [Key]
-        public int Id { get; set; }
+        public int WeaknessId { get; set; }
 
         public string Type { get; set; }
 

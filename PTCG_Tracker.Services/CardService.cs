@@ -1,5 +1,6 @@
 ﻿using PTCG_Tracker.Data;
 using PTCG_Tracker.Models.Card;
+using PTCG_Tracker.Models.Collection;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -17,7 +18,7 @@ namespace PTCG_Tracker.Services
         {
             var entity = new Card()
             {
-                ID = model.CardId,
+                CardId = model.CardId,
                 Name = model.Name,
                 ImageURL = model.ImageURL,
                 Type = model.Type,
@@ -38,6 +39,7 @@ namespace PTCG_Tracker.Services
             };
 
             //entity.addtoAttackList <Research adding Multiple>
+            entity.Attacks.Add(new Attack());
 
             using (var ctx = new ApplicationDbContext())
             {
@@ -47,7 +49,10 @@ namespace PTCG_Tracker.Services
         }
 
         //Add Card to Collection (find collection then add card to it)
+        //public IEnumerable<Card> AddCardsToCollection(CollectionDetails model)
+        //{
 
+        //}
 
         public IEnumerable<CardListItem> GetCards(CardSearchParams model)
         {
@@ -66,7 +71,7 @@ namespace PTCG_Tracker.Services
 
                 return cards.Select(c => new CardListItem
                 {
-                    ID = c.ID,
+                    CardId = c.CardId,
                     Name = c.Name,
                     Rarity = c.Rarity
                 }).ToArray();
@@ -77,7 +82,7 @@ namespace PTCG_Tracker.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var card = ctx.Cards.Where(c => c.ID == id)
+                var card = ctx.Cards.Where(c => c.CardId == id)
                     .Include(c => c.Weakness)
                     .Include(c => c.Resistance)
                     .Include(c => c.Attacks)
@@ -87,7 +92,7 @@ namespace PTCG_Tracker.Services
 
                 return new CardDetails()
                 {
-                    ID = card.ID,
+                    CardId = card.CardId,
                     Name = card.Name,
                     ImageURL = card.ImageURL,
                     Type = card.Type,
@@ -112,12 +117,12 @@ namespace PTCG_Tracker.Services
         {
             using(var ctx = new ApplicationDbContext())
             {
-                var card = ctx.Cards.Where(c => c.ID == model.ID)
+                var card = ctx.Cards.Where(c => c.CardId == model.CardId)
                     .FirstOrDefault();
 
                 if (card == null) return false;
 
-                card.ID = model.ID;
+                card.CardId = model.CardId;
                 card.Name = model.Name;
                 card.ImageURL = model.ImageURL;
                 card.Type = model.Type;
@@ -144,7 +149,7 @@ namespace PTCG_Tracker.Services
             using(var ctx = new ApplicationDbContext())
             {
                 var card = ctx.Cards
-                    .Where(c => c.ID == id)
+                    .Where(c => c.CardId == id)
                     .FirstOrDefault();
 
                 ctx.Cards.Remove(card);

@@ -10,7 +10,7 @@ namespace PTCG_Tracker.Data
     public class Resistance
     {
         [Key]
-        public int Id{ get; set; }
+        public int ResistanceId{ get; set; }
 
         public string Type { get; set; }
 

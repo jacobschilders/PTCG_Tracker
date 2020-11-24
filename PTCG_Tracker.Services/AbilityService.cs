@@ -36,7 +36,7 @@ namespace PTCG_Tracker.Services
                     .Select(a => new AbilityListItem
                     
                     {
-                        Id = a.Id,
+                        AbilityId = a.AbilityId,
                         Name = a.Name,
                         Text = a.Text,
                         Type = a.Type
@@ -51,12 +51,12 @@ namespace PTCG_Tracker.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var foundAbility = ctx.Abilities.Where(a => a.Id == id)
+                var foundAbility = ctx.Abilities.Where(a => a.AbilityId == id)
                     .FirstOrDefault();
                 return (foundAbility != null) ?
                     new AbilityListItem()
                     {
-                        Id = foundAbility.Id,
+                        AbilityId = foundAbility.AbilityId,
                         Name = foundAbility.Name,
                         Text = foundAbility.Text,
                         Type = foundAbility.Type
@@ -70,7 +70,7 @@ namespace PTCG_Tracker.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Abilities.Where(a => a.Id == model.Id)
+                var entity = ctx.Abilities.Where(a => a.AbilityId == model.AbilityId)
                     .FirstOrDefault();
                 if (entity == null)
                     return false;
@@ -87,7 +87,7 @@ namespace PTCG_Tracker.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Abilities.Where(a => a.Id == id)
+                var entity = ctx.Abilities.Where(a => a.AbilityId == id)
                     .FirstOrDefault();
                 if (entity == null)
                     return false;

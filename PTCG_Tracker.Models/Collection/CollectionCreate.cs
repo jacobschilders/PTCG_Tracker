@@ -10,7 +10,7 @@ namespace PTCG_Tracker.Models.Collection
     public class CollectionCreate
     {
         [Key]
-        public int Id { get; set; }
+        public int CollectionId { get; set; }
         public string Name { get; set; }
 
         public bool Public { get; set; }

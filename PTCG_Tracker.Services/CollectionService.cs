@@ -15,7 +15,7 @@ namespace PTCG_Tracker.Services
         {
             var entity = new Collection
             {
-                Id = model.Id,
+                CollectionId = model.CollectionId,
                 Name = model.Name,
                 Public = model.Public,
                 CardsUntilComplete = model.CardsUntilComplete
@@ -51,7 +51,7 @@ namespace PTCG_Tracker.Services
                 return ctx.Collections
                     .Select(c => new CollectionListItem
                     {
-                        Id = c.Id,
+                        CollectionId = c.CollectionId,
                         Name = c.Name,
                         CardsInCollection = c.CardsInCollection
                     }
@@ -63,12 +63,12 @@ namespace PTCG_Tracker.Services
         {
             using(var ctx = new ApplicationDbContext())
             {
-                var foundCollection = ctx.Collections.Where(c => c.Id == id)
+                var foundCollection = ctx.Collections.Where(c => c.CollectionId == id)
                     .FirstOrDefault();
                 return (foundCollection != null) ?
                     new CollectionListItem()
                     {
-                        Id = foundCollection.Id,
+                        CollectionId = foundCollection.CollectionId,
                         Name = foundCollection.Name,
                         Public = foundCollection.Public,
                         CardsInCollection = foundCollection.CardsInCollection,
@@ -85,7 +85,7 @@ namespace PTCG_Tracker.Services
         {
             using(var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Collections.Where(c => c.Id == model.Id)
+                var entity = ctx.Collections.Where(c => c.CollectionId == model.CollectionId)
                     .FirstOrDefault();
                 if (entity == null)
                     return false;
@@ -103,7 +103,7 @@ namespace PTCG_Tracker.Services
         {
             using(var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Collections.Where(c => c.Id == id)
+                var entity = ctx.Collections.Where(c => c.CollectionId == id)
                     .FirstOrDefault();
                 if (entity == null)
                     return false;

@@ -35,7 +35,7 @@ namespace PTCG_Tracker.Services
                 return ctx.Attacks
                     .Select(a => new AttackListItem
                     {
-                        Id = a.Id,
+                        AttackId = a.AttackId,
                         Name = a.Name,
                         Text = a.Text,
                         Damage = a.Damage,
@@ -49,12 +49,12 @@ namespace PTCG_Tracker.Services
         {
             using(var ctx = new ApplicationDbContext())
             {
-                var foundAttack = ctx.Attacks.Where(a => a.Id == id)
+                var foundAttack = ctx.Attacks.Where(a => a.AttackId == id)
                     .FirstOrDefault();
                 return (foundAttack != null) ?
                     new AttackListItem()
                     {
-                        Id = foundAttack.Id,
+                        AttackId = foundAttack.AttackId,
                         Name = foundAttack.Name,
                         Text = foundAttack.Text,
                         Damage = foundAttack.Damage,
@@ -68,7 +68,7 @@ namespace PTCG_Tracker.Services
         {
             using(var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Attacks.Where(a => a.Id == model.Id)
+                var entity = ctx.Attacks.Where(a => a.AttackId == model.AttackId)
                     .FirstOrDefault();
                 if (entity == null)
                     return false;
@@ -86,7 +86,7 @@ namespace PTCG_Tracker.Services
         {
             using(var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Attacks.Where(a => a.Id == id)
+                var entity = ctx.Attacks.Where(a => a.AttackId == id)
                     .FirstOrDefault();
                 if (entity == null)
                     return false;

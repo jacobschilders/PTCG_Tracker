@@ -10,7 +10,7 @@ namespace PTCG_Tracker.Data
     public class Ability
     {
         [Key]
-        public int Id { get; set; }
+        public int AbilityId { get; set; }
 
         public string Name { get; set; }
 

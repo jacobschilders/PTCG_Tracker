@@ -10,7 +10,7 @@ namespace PTCG_Tracker.Models.Attack
     public class AttackEdit
     {
         [Key]
-        public int Id { get; set; }
+        public int AttackId { get; set; }
         public string Name { get; set; }
 
         public string Text { get; set; }

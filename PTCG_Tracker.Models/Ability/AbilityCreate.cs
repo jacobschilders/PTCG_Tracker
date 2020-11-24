@@ -10,7 +10,7 @@ namespace PTCG_Tracker.Models.Ability
     public class AbilityCreate
     {
         [Key]
-        public int Id { get; set; }
+        public int AbilityId { get; set; }
         public string Name { get; set; }
 
         public string Text { get; set; }

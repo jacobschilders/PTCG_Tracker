@@ -8,7 +8,7 @@ namespace PTCG_Tracker.Models.Resistance
 {
     public class ResistanceListItem
     {
-        public int Id { get; set; }
+        public int ResistanceId { get; set; }
 
         public string Type { get; set; }
 

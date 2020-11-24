@@ -10,7 +10,7 @@ namespace PTCG_Tracker.Data
     public class Collection
     {
         [Key]
-        public int Id { get; set; }
+        public int CollectionId { get; set; }
 
         public string Name { get; set; }
 
@@ -26,5 +26,9 @@ namespace PTCG_Tracker.Data
         public DateTimeOffset ModifiedAt { get; set; }
 
         public ICollection<Card> Cards { get; set; }
+        public Collection()
+        {
+            Cards = new HashSet<Card>();
+        }
     }
 }

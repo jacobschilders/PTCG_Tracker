@@ -8,7 +8,7 @@ namespace PTCG_Tracker.Models.Weakness
 {
     public class WeaknessDetails
     {
-        public int Id { get; set; }
+        public int WeaknessId { get; set; }
 
         public string Type { get; set; }
 

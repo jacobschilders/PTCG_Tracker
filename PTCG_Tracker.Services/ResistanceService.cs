@@ -32,7 +32,7 @@ namespace PTCG_Tracker.Services
                 return ctx.Resistances
                     .Select(a => new ResistanceListItem
                     {
-                        Id = a.Id,
+                        ResistanceId = a.ResistanceId,
                         Type = a.Type,
                         Value = a.Value
 
@@ -45,12 +45,12 @@ namespace PTCG_Tracker.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var foundResistance = ctx.Resistances.Where(a => a.Id == id)
+                var foundResistance = ctx.Resistances.Where(a => a.ResistanceId == id)
                     .FirstOrDefault();
                 return (foundResistance != null) ?
                     new ResistanceListItem()
                     {
-                        Id = foundResistance.Id,
+                        ResistanceId = foundResistance.ResistanceId,
                         Type = foundResistance.Type,
                         Value = foundResistance.Value
                     }
@@ -62,7 +62,7 @@ namespace PTCG_Tracker.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Resistances.Where(a => a.Id == model.Id)
+                var entity = ctx.Resistances.Where(a => a.ResistanceId == model.ResistanceId)
                     .FirstOrDefault();
                 if (entity == null)
                     return false;
@@ -78,7 +78,7 @@ namespace PTCG_Tracker.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Resistances.Where(a => a.Id == id)
+                var entity = ctx.Resistances.Where(a => a.ResistanceId == id)
                     .FirstOrDefault();
                 if (entity == null)
                     return false;

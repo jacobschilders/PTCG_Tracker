@@ -32,7 +32,7 @@ namespace PTCG_Tracker.Services
                 return ctx.Weaknesses
                     .Select(a => new WeaknessListItem
                     {
-                        Id = a.Id,
+                        WeaknessId = a.WeaknessId,
                         Type = a.Type,
                         Value = a.Value
 
@@ -45,12 +45,12 @@ namespace PTCG_Tracker.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var foundWeakness = ctx.Weaknesses.Where(a => a.Id == id)
+                var foundWeakness = ctx.Weaknesses.Where(a => a.WeaknessId == id)
                     .FirstOrDefault();
                 return (foundWeakness != null) ?
                     new WeaknessListItem()
                     {
-                        Id = foundWeakness.Id,
+                        WeaknessId = foundWeakness.WeaknessId,
                         Type = foundWeakness.Type,
                         Value = foundWeakness.Value
                     }
@@ -62,7 +62,7 @@ namespace PTCG_Tracker.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Weaknesses.Where(a => a.Id == model.Id)
+                var entity = ctx.Weaknesses.Where(a => a.WeaknessId == model.WeaknessId)
                     .FirstOrDefault();
                 if (entity == null)
                     return false;
@@ -78,7 +78,7 @@ namespace PTCG_Tracker.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Weaknesses.Where(a => a.Id == id)
+                var entity = ctx.Weaknesses.Where(a => a.WeaknessId == id)
                     .FirstOrDefault();
                 if (entity == null)
                     return false;

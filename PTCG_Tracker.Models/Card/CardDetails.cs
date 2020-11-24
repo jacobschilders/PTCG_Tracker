@@ -13,7 +13,7 @@ namespace PTCG_Tracker.Models.Card
     public class CardDetails
     {
         [Key]
-        public string ID { get; set; }
+        public string CardId { get; set; }
         
         public string Name { get; set; }
 
