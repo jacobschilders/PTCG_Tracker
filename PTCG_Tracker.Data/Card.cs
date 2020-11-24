@@ -36,17 +36,17 @@ namespace PTCG_Tracker.Data
         public string Set { get; set; }
 
         //Connection to Weakness Table
-        public int WeaknessId { get; set; }
+        public int? WeaknessId { get; set; }
         [ForeignKey(nameof(WeaknessId))]
         public virtual Weakness Weakness { get; set; }
 
         //Connection to Resistance Table
-        public int ResistanceId { get; set; }
+        public int? ResistanceId { get; set; }
         [ForeignKey(nameof(ResistanceId))]
         public virtual Resistance Resistance { get; set; }
 
         //Connection to Ability Table
-        public int AbilityId { get; set; }
+        public int? AbilityId { get; set; }
         [ForeignKey(nameof(AbilityId))]
         public virtual Ability Ability { get; set; }
 

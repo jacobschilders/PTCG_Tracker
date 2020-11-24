@@ -1,4 +1,4 @@
-﻿@model IEnumerable<PTCG_Tracker.Models.Card.CardListItem>
+﻿@model IEnumerable<PTCG_Tracker.Models.Collection.CollectionListItem>
 
 @{
     ViewBag.Title = "Index";
@@ -15,7 +15,19 @@
             @Html.DisplayNameFor(model => model.Name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Rarity)
+            @Html.DisplayNameFor(model => model.CardsInCollection)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CardsUntilComplete)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Public)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Complete)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModifiedAt)
         </th>
         <th></th>
     </tr>
@@ -26,12 +38,24 @@
             @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Rarity)
+            @Html.DisplayFor(modelItem => item.CardsInCollection)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @Html.DisplayFor(modelItem => item.CardsUntilComplete)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Public)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Complete)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModifiedAt)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CollectionId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CollectionId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CollectionId })
         </td>
     </tr>
 }

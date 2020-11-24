@@ -68,6 +68,8 @@ namespace PTCG_Tracker.Data
 
         }
 
+        //public System.Data.Entity.DbSet<PTCG_Tracker.Models.Collection.CollectionListItem> CollectionListItems { get; set; }
+
         //public System.Data.Entity.DbSet<PTCG_Tracker.Models.Card.CardListItem> CardListItems { get; set; }
 
         //public System.Data.Entity.DbSet<PTCG_Tracker.Models.Card.CardCreate> CardCreates { get; set; }
