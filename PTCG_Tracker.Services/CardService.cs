@@ -37,9 +37,23 @@ namespace PTCG_Tracker.Services
                 
                 //How to add attacks to card? ICollection<Attack>
             };
+            //using(var ctx = new ApplicationDbContext())
+            //{
+            //    var attackEntity = ctx.Attacks.ToList();
+            //    var attackList = attackEntity.Add(a => new Attack
+            //    {
+            //        AttackId = a.AttackId,
+            //        Name = a.Name,
+            //        Text = a.Text,
+            //        Damage = a.Damage,
+            //        EnergyCost = a.EnergyCost
+
+            //    })
+            //}
+            
 
             //entity.addtoAttackList <Research adding Multiple>
-            entity.Attacks.Add(new Attack());
+            //entity.Attacks.Add(new Attack());
 
             using (var ctx = new ApplicationDbContext())
             {
@@ -107,8 +121,8 @@ namespace PTCG_Tracker.Services
                     AbilityId = (int)card.AbilityId,
                     Artist = card.Artist,
                     Rarity = card.Rarity,
-                    Collections = (ICollection<Models.Collection.CollectionDetails>)card.Collections,
-                    Attacks = (ICollection<Models.Attack.AttackDetails>)card.Attacks
+                    Collections = (HashSet<Models.Collection.CollectionDetails>)card.Collections,
+                    Attacks = (HashSet<Models.Attack.AttackDetails>)card.Attacks
                 };
             }
         }

@@ -25,10 +25,7 @@ namespace PTCG_Tracker.Data
 
         public DateTimeOffset ModifiedAt { get; set; }
 
-        public ICollection<Card> Cards { get; set; }
-        public Collection()
-        {
-            Cards = new HashSet<Card>();
-        }
+        public virtual ICollection<Card> Cards { get; set; }
+       
     }
 }

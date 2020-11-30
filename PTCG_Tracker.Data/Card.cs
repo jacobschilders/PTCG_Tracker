@@ -36,16 +36,19 @@ namespace PTCG_Tracker.Data
         public string Set { get; set; }
 
         //Connection to Weakness Table
+        [DisplayFormat(NullDisplayText ="No Weakness Available")]
         public int? WeaknessId { get; set; }
         [ForeignKey(nameof(WeaknessId))]
         public virtual Weakness Weakness { get; set; }
 
         //Connection to Resistance Table
+        [DisplayFormat(NullDisplayText = "No Resistance Available")]
         public int? ResistanceId { get; set; }
         [ForeignKey(nameof(ResistanceId))]
         public virtual Resistance Resistance { get; set; }
 
         //Connection to Ability Table
+        [DisplayFormat(NullDisplayText = "No Ability Available")]
         public int? AbilityId { get; set; }
         [ForeignKey(nameof(AbilityId))]
         public virtual Ability Ability { get; set; }
@@ -54,14 +57,10 @@ namespace PTCG_Tracker.Data
 
         public string Rarity { get; set; }
 
-        public ICollection<Attack> Attacks { get; set; }
+        public virtual ICollection<Attack> Attacks { get; set; }
        
-         public ICollection<Collection> Collections { get; set; }
-        public Card()
-        {
-            Collections = new HashSet<Collection>();
-            Attacks = new HashSet<Attack>();
-        }
+         public virtual ICollection<Collection> Collections { get; set; }
+        
 
 
     }

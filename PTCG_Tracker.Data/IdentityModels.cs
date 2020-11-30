@@ -54,16 +54,16 @@ namespace PTCG_Tracker.Data
                 .Add(new IdentityUserLoginConfiguration())
                 .Add(new IdentityUserRoleConfiguration());
 
-            modelBuilder.Entity<Card>()
-                .HasMany(c => c.Collections)
-                .WithMany(cr => cr.Cards)
-                .Map(
-                m =>
-                {
-                    m.MapLeftKey("CollectionId");
-                    m.MapRightKey("CardId");
-                    m.ToTable("CardCollections");
-                });
+            //modelBuilder.Entity<Card>()
+            //    .HasMany(c => c.Collections)
+            //    .WithMany(cr => cr.Cards)
+            //    .Map(
+            //    m =>
+            //    {
+            //        m.MapLeftKey("CollectionId");
+            //        m.MapRightKey("CardId");
+            //        m.ToTable("CardCollections");
+            //    });
           
 
         }

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace PTCG_Tracker.Models.Card
 {
     public class CardCreate
@@ -42,6 +43,8 @@ namespace PTCG_Tracker.Models.Card
         public string Artist { get; set; }
         [Required]
         public string Rarity { get; set; }
+
+        
 
     
         

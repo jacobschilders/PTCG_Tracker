@@ -1,5 +1,7 @@
 ﻿using Microsoft.Owin;
 using Owin;
+using Microsoft.SqlServer;
+using PTCG_Tracker.Data;
 
 [assembly: OwinStartupAttribute(typeof(PTCG_Tracker.Startup))]
 namespace PTCG_Tracker
