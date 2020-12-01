@@ -53,7 +53,7 @@ namespace PTCG_Tracker.Services
                     {
                         CollectionId = c.CollectionId,
                         Name = c.Name,
-                        CardsInCollection = c.CardsInCollection
+                        CardsInCollection = (int)c.CardsInCollection
                     }
                     ).ToList();
             }
@@ -71,7 +71,7 @@ namespace PTCG_Tracker.Services
                         CollectionId = foundCollection.CollectionId,
                         Name = foundCollection.Name,
                         Public = foundCollection.Public,
-                        CardsInCollection = foundCollection.CardsInCollection,
+                        CardsInCollection = (int)foundCollection.CardsInCollection,
                         CardsUntilComplete = foundCollection.CardsUntilComplete,
                         Complete = foundCollection.Complete,
                         ModifiedAt = foundCollection.ModifiedAt

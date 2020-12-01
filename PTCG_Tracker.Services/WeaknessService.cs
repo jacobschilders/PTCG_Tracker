@@ -14,6 +14,7 @@ namespace PTCG_Tracker.Services
         {
             var newWeakness = new Weakness
             {
+                WeaknessId = model.WeaknessId,
                 Type = model.Type,
                 Value = model.Value
             };

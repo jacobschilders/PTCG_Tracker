@@ -1,4 +1,5 @@
 ﻿using PTCG_Tracker.Data;
+using PTCG_Tracker.Models.Attack;
 using PTCG_Tracker.Models.Card;
 using PTCG_Tracker.Models.Collection;
 using System;
@@ -35,26 +36,10 @@ namespace PTCG_Tracker.Services
                 Artist = model.Artist,
                 Rarity = model.Rarity,
                 
-                //How to add attacks to card? ICollection<Attack>
+                
             };
-            //using(var ctx = new ApplicationDbContext())
-            //{
-            //    var attackEntity = ctx.Attacks.ToList();
-            //    var attackList = attackEntity.Add(a => new Attack
-            //    {
-            //        AttackId = a.AttackId,
-            //        Name = a.Name,
-            //        Text = a.Text,
-            //        Damage = a.Damage,
-            //        EnergyCost = a.EnergyCost
 
-            //    })
-            //}
             
-
-            //entity.addtoAttackList <Research adding Multiple>
-            //entity.Attacks.Add(new Attack());
-
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Cards.Add(entity);
@@ -63,10 +48,10 @@ namespace PTCG_Tracker.Services
         }
 
         //Add Card to Collection (find collection then add card to it)
-        //public IEnumerable<Card> AddCardsToCollection(CollectionDetails model)
-        //{
-
-        //}
+        public IEnumerable<Collection> AddCardToCollection(int collectionId)
+        {
+            
+        }
 
         public IEnumerable<CardListItem> GetCards(CardSearchParams model)
         {
@@ -121,8 +106,9 @@ namespace PTCG_Tracker.Services
                     AbilityId = (int)card.AbilityId,
                     Artist = card.Artist,
                     Rarity = card.Rarity,
-                    Collections = (HashSet<Models.Collection.CollectionDetails>)card.Collections,
-                    Attacks = (HashSet<Models.Attack.AttackDetails>)card.Attacks
+                    Attacks = (ICollection<AttackDetails>)card.Attacks,
+                    Collections = (ICollection<CollectionDetails>)card.CardCollections
+                    
                 };
             }
         }
@@ -152,6 +138,7 @@ namespace PTCG_Tracker.Services
                 card.AbilityId = model.AbilityId;
                 card.Artist = model.Artist;
                 card.Rarity = model.Rarity;
+                
                 // how to edit Attakcs
 
                 return ctx.SaveChanges() == 1;

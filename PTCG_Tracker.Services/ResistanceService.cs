@@ -14,6 +14,7 @@ namespace PTCG_Tracker.Services
         {
             var newResistance = new Resistance
             {
+                ResistanceId = model.ResistanceId,
                 Type = model.Type,
                 Value = model.Value
             };

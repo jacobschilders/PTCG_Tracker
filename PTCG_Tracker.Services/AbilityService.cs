@@ -14,6 +14,7 @@ namespace PTCG_Tracker.Services
         {
             var newAbility = new Ability
             {
+                AbilityId = model.AbilityId,
                 Name = model.Name,
                 Text = model.Text,
                 Type = model.Type

@@ -20,7 +20,7 @@ namespace PTCG_Tracker.Data
 
         public List<string> EnergyCost { get; set; }
         
-        public virtual ICollection<Card> Cards { get; set; }
+        public virtual Card Card { get; set; }
 
 
     }

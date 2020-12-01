@@ -54,19 +54,23 @@ namespace PTCG_Tracker.Data
                 .Add(new IdentityUserLoginConfiguration())
                 .Add(new IdentityUserRoleConfiguration());
 
-            //modelBuilder.Entity<Card>()
-            //    .HasMany(c => c.Collections)
-            //    .WithMany(cr => cr.Cards)
-            //    .Map(
-            //    m =>
-            //    {
-            //        m.MapLeftKey("CollectionId");
-            //        m.MapRightKey("CardId");
-            //        m.ToTable("CardCollections");
-            //    });
-          
+            modelBuilder.Entity<Card>()
+                .HasMany(c => c.Collections)
+                .WithMany(c => c.Cards)
+                .Map(
+                m =>
+                {
+                    m.ToTable("CardCollections");
+                    m.MapLeftKey("CollectionId");
+                    m.MapRightKey("CardId");
+                });
+
+            base.OnModelCreating(modelBuilder);
 
         }
+
+
+        //public System.Data.Entity.DbSet<PTCG_Tracker.Models.Ability.AbilityCreate> AbilityCreates { get; set; }
 
         //public System.Data.Entity.DbSet<PTCG_Tracker.Models.Collection.CollectionListItem> CollectionListItems { get; set; }
 

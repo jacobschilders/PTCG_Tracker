@@ -24,7 +24,16 @@ namespace PTCG_Tracker.Models.Collection
         public bool Public { get; set; }
 
         [Display(Name = "The Collection is Complete")]
-        public bool Complete { get; set; }
+        public bool Complete {
+            get
+            {
+                if (CardsInCollection == CardsUntilComplete)
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
 
         public DateTimeOffset ModifiedAt { get; set; }
     }

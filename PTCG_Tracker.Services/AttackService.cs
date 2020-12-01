@@ -14,6 +14,7 @@ namespace PTCG_Tracker.Services
         {
             var newAttack = new Attack
             {
+                AttackId = model.AttackId,
                 Name = model.Name,
                 Text = model.Text,
                 Damage = model.Damage,
@@ -27,6 +28,8 @@ namespace PTCG_Tracker.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        //Add Attack to Card
 
         public IEnumerable<AttackListItem> GetAllAttacks()
         {

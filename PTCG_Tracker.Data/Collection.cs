@@ -16,10 +16,18 @@ namespace PTCG_Tracker.Data
 
         public bool Public { get; set; }
         //can be determined by the number of cardsincollection compared to cards until complete
-        public bool Complete { get; set; }
+        public bool Complete 
+        { 
+            get 
+            {
+                if(CardsInCollection == CardsUntilComplete)
+                {
+                    return true;
+                }
+                return false;
+            } 
+        }
 
-        //a calculation can be done based on List<Card> prop
-        public int CardsInCollection { get; set; }
 
         public int CardsUntilComplete { get; set; }
 
@@ -27,5 +35,15 @@ namespace PTCG_Tracker.Data
 
         public virtual ICollection<Card> Cards { get; set; }
        
+        //a calculation can be done based on List<Card> prop
+        public int? CardsInCollection
+        {
+            get
+            {
+                var cardsInCollection = Cards.Count();
+                return cardsInCollection;
+            }
+        }
+
     }
 }

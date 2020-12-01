@@ -59,7 +59,7 @@ namespace PTCG_Tracker.Data
 
         public virtual ICollection<Attack> Attacks { get; set; }
        
-         public virtual ICollection<Collection> Collections { get; set; }
+        public virtual ICollection<Collection> Collections { get; set; }
         
 
 
