@@ -63,9 +63,7 @@ namespace PTCG_Tracker.Controllers
                 {
                     Name = detail.Name,
                     Public = detail.Public,
-                    CardsInCollection = detail.CardsInCollection,
                     CardsUntilComplete = detail.CardsUntilComplete,
-                    Complete = detail.Complete,
                     ModifiedAt = DateTime.Now
                 };
             return View(model);

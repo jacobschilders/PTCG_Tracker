@@ -48,10 +48,19 @@ namespace PTCG_Tracker.Services
         }
 
         //Add Card to Collection (find collection then add card to it)
-        public IEnumerable<Collection> AddCardToCollection(int collectionId)
-        {
-            
-        }
+        //public IEnumerable<Card> AddCardToCollection(int collectionId, string cardId)
+        //{
+        //    using(var ctx = new ApplicationDbContext())
+        //    {
+        //        var foundCollection = ctx.Collections.Find(collectionId);
+        //        var addedCard = ctx.Cards.Find(cardId);
+
+        //        foundCollection.Cards.Add(addedCard);
+        //        //what do I return to save?
+        //        return ctx.SaveChanges() == 1;
+
+        //    }
+        //}
 
         public IEnumerable<CardListItem> GetCards(CardSearchParams model)
         {
@@ -107,7 +116,7 @@ namespace PTCG_Tracker.Services
                     Artist = card.Artist,
                     Rarity = card.Rarity,
                     Attacks = (ICollection<AttackDetails>)card.Attacks,
-                    Collections = (ICollection<CollectionDetails>)card.CardCollections
+                    Collections = (ICollection<CollectionDetails>)card.Collections
                     
                 };
             }

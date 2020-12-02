@@ -73,7 +73,6 @@ namespace PTCG_Tracker.Services
                         Public = foundCollection.Public,
                         CardsInCollection = (int)foundCollection.CardsInCollection,
                         CardsUntilComplete = foundCollection.CardsUntilComplete,
-                        Complete = foundCollection.Complete,
                         ModifiedAt = foundCollection.ModifiedAt
                         
                     }
