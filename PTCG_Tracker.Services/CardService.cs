@@ -81,7 +81,8 @@ namespace PTCG_Tracker.Services
                 {
                     CardId = c.CardId,
                     Name = c.Name,
-                    Rarity = c.Rarity
+                    Rarity = c.Rarity,
+                    SuperType = c.SuperType
                 }).ToArray();
             }
         }
@@ -115,8 +116,8 @@ namespace PTCG_Tracker.Services
                     AbilityId = (int)card.AbilityId,
                     Artist = card.Artist,
                     Rarity = card.Rarity,
-                    Attacks = (ICollection<AttackDetails>)card.Attacks,
-                    Collections = (ICollection<CollectionDetails>)card.Collections
+                    //Attacks = (ICollection<AttackDetails>)card.Attacks,
+                    //Collections = (ICollection<CollectionDetails>)card.Collections
                     
                 };
             }

@@ -3,9 +3,21 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Index</h2>
-
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="card">
+    <div class="card-header">
+        Card/Index
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Card List</h4>
+        <p class="card-text">View all the cards you have added to the database.</p>
+    </div>
+</div>
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -23,7 +35,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Rarity)
         </th>
-        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.SuperType)
+        </th>
     </tr>
 
 @foreach (var item in Model) {

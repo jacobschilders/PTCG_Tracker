@@ -4,7 +4,22 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="card">
+    <div class="card-header">
+        Resistance/Index
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Resistance List</h4>
+        <p class="card-text">View all the "Resistances" currently in the database.</p>
+    </div>
+</div>
+
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -20,20 +35,21 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Type)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Value)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ResistanceId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ResistanceId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ResistanceId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Value)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ResistanceId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ResistanceId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ResistanceId })
+            </td>
+        </tr>
+    }
 
 </table>

@@ -4,14 +4,28 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="card text-white bg-dark mb-3 d-inline-block">
+    <div class="card-header">
+        Card/Create
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Create Card</h4>
+        <p class="card-text">Create a new "Card" to be added to the database.</p>
+    </div>
+</div>
 
-@using (Html.BeginForm()) 
+
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>CardCreate</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">

@@ -13,5 +13,7 @@ namespace PTCG_Tracker.Models.Card
         public string Name { get; set; }
 
         public string Rarity { get; set; }
+
+        public string SuperType { get; set; }
     }
 }

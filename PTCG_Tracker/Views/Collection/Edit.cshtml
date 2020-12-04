@@ -4,12 +4,26 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="card text-white bg-dark mb-3 d-inline-block">
+    <div class="card-header">
+        Collection/Edit/{id}
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Edit Collection</h4>
+        <p class="card-text">Edit a "Collection" currently in your database.</p>
+    </div>
+</div>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>CollectionEdit</h4>
         <hr />

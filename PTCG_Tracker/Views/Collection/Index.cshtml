@@ -4,7 +4,21 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="card">
+    <div class="card-header">
+        Collection/Index
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Collection List</h4>
+        <p class="card-text">View all the "Collections" you have added to the database.</p>
+    </div>
+</div>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -32,32 +46,33 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CardsInCollection)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CardsUntilComplete)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Public)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Complete)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ModifiedAt)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CollectionId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CollectionId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CollectionId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CardsInCollection)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CardsUntilComplete)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Public)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Complete)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifiedAt)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.CollectionId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.CollectionId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.CollectionId })
+            </td>
+        </tr>
+    }
 
 </table>
