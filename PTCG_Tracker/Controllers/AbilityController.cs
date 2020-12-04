@@ -62,6 +62,7 @@ namespace PTCG_Tracker.Controllers
             var model =
                 new AbilityEdit
                 {
+                    AbilityId =detail.AbilityId,
                     Name = detail.Name,
                     Text = detail.Text,
                     Type = detail.Type

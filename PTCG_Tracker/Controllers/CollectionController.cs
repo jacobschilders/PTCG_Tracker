@@ -61,6 +61,7 @@ namespace PTCG_Tracker.Controllers
             var model =
                 new CollectionEdit
                 {
+                    CollectionId = detail.CollectionId,
                     Name = detail.Name,
                     Public = detail.Public,
                     CardsUntilComplete = detail.CardsUntilComplete,

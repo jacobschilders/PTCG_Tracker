@@ -26,6 +26,9 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.WeaknessId)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Type)
         </th>
         <th>
@@ -36,19 +39,22 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Type)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Value)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.WeaknessId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.WeaknessId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.WeaknessId })
-            </td>
-        </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.WeaknessId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Type)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Value)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.WeaknessId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.WeaknessId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.WeaknessId })
+    </td>
+</tr>
     }
 
 </table>

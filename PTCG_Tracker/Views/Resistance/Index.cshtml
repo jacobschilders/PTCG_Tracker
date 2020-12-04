@@ -27,6 +27,9 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.ResistanceId)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Type)
         </th>
         <th>
@@ -37,19 +40,22 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Type)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Value)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ResistanceId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ResistanceId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ResistanceId })
-            </td>
-        </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.ResistanceId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Type)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Value)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.ResistanceId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.ResistanceId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.ResistanceId })
+    </td>
+</tr>
     }
 
 </table>

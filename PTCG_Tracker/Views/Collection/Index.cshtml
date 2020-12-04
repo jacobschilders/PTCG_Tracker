@@ -26,6 +26,9 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.CollectionId)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
         <th>
@@ -48,31 +51,34 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CardsInCollection)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CardsUntilComplete)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Public)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Complete)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ModifiedAt)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.CollectionId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.CollectionId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.CollectionId })
-            </td>
-        </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.CollectionId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CardsInCollection)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CardsUntilComplete)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Public)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Complete)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ModifiedAt)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.CollectionId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.CollectionId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.CollectionId })
+    </td>
+</tr>
     }
 
 </table>

@@ -62,6 +62,7 @@ namespace PTCG_Tracker.Controllers
             var model =
                 new WeaknessEdit
                 {
+                    WeaknessId = detail.WeaknessId,
                     Type = detail.Type,
                     Value = detail.Value
                 };

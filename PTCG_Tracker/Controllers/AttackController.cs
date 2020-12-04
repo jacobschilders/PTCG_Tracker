@@ -62,6 +62,7 @@ namespace PTCG_Tracker.Controllers
             var model =
                 new AttackEdit
                 {
+                    AttackId = detail.AttackId,
                     Name = detail.Name,
                     Text = detail.Text,
                     Damage = detail.Damage,

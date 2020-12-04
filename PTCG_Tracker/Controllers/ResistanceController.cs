@@ -62,6 +62,7 @@ namespace PTCG_Tracker.Controllers
             var model =
                 new ResistanceEdit
                 {
+                    ResistanceId = detail.ResistanceId,
                     Type = detail.Type,
                     Value = detail.Value
                 };
