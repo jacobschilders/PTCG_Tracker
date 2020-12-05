@@ -125,10 +125,11 @@ namespace PTCG_Tracker.Services
                 var card = ctx.Cards.Where(c => c.CardId == id)
                     .Include(c => c.Weakness)
                     .Include(c => c.Resistance)
-                    .Include(c => c.Attacks)
                     .FirstOrDefault();
 
                 if (card == null) return null;
+                var attackService = new AttackService();
+                var collectionService = new CollectionService();
 
                 return new CardDetails()
                 {
@@ -147,8 +148,8 @@ namespace PTCG_Tracker.Services
                     AbilityId = (int)card.AbilityId,
                     Artist = card.Artist,
                     Rarity = card.Rarity,
-                    //Attacks = (ICollection<AttackDetails>)card.Attacks,
-                    //Collections = (ICollection<CollectionDetails>)card.Collections
+                    Attacks = (ICollection<AttackDetails>)attackService.GetAttacksByCardId(id),
+                    Collections = (ICollection<CollectionDetails>)collectionService.GetCollectionByCardId(id)
                     
                 };
             }
@@ -179,8 +180,6 @@ namespace PTCG_Tracker.Services
                 card.AbilityId = model.AbilityId;
                 card.Artist = model.Artist;
                 card.Rarity = model.Rarity;
-                
-                // how to edit Attakcs
 
                 return ctx.SaveChanges() == 1;
             }

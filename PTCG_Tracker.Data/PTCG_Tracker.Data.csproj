@@ -70,6 +70,10 @@
     <Compile Include="Migrations\202012041901194_add-migration FirstMigration.designer.cs">
       <DependentUpon>202012041901194_add-migration FirstMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202012051339135_secondUpdate.cs" />
+    <Compile Include="Migrations\202012051339135_secondUpdate.designer.cs">
+      <DependentUpon>202012051339135_secondUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resistance.cs" />
@@ -91,6 +95,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012041901194_add-migration FirstMigration.resx">
       <DependentUpon>202012041901194_add-migration FirstMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012051339135_secondUpdate.resx">
+      <DependentUpon>202012051339135_secondUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

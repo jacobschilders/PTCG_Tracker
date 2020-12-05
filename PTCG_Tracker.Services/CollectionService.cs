@@ -84,6 +84,25 @@ namespace PTCG_Tracker.Services
             }
         }
 
+        public IEnumerable<CollectionDetails> GetCollectionByCardId(string cardId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var cardService = new CardService();
+                var collectedCards = ctx.Cards.Single(c => c.CardId == cardId)
+                    .Collections
+                    .Select(c => new CollectionDetails
+                    {
+                        CollectionId = c.CollectionId,
+                        Name = c.Name,
+                        Cards = (ICollection<CardDetails>)cardService.GetCardById(cardId),
+                        CardsUntilComplete = c.CardsUntilComplete,
+                        Public = c.Public
+                    });
+                return collectedCards.ToArray();
+            }
+        }
+
         public bool UpdateCollection(CollectionEdit model)
         {
             using(var ctx = new ApplicationDbContext())

@@ -149,6 +149,26 @@
                     @Html.DisplayFor(model => model.Rarity)
                 </dd>
 
+                <dt>
+                    List of Attacks on this Card
+                </dt>
+                @foreach (var item in Model.Attacks)
+                {
+                    <dd>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </dd>
+                }
+
+                <dt>
+                    List of Collections this Card belongs to
+                </dt>
+                @foreach (var item in Model.Collections)
+                {
+                    <dd>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </dd>
+                }
+
             </dl>
         </div>
     </div>

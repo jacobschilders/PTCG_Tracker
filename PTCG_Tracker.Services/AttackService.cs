@@ -67,6 +67,24 @@ namespace PTCG_Tracker.Services
             }
         }
 
+        public IEnumerable<AttackDetails> GetAttacksByCardId(string cardId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var cardAttacks = ctx.Cards.Single(c => c.CardId == cardId)
+                    .Attacks
+                    .Select(c => new AttackDetails
+                    {
+                        AttackId = c.AttackId,
+                        Name = c.Name,
+                        Damage = c.Damage,
+                        EnergyCost = c.EnergyCost,
+                        Text = c.Text
+                    });
+                return cardAttacks.ToArray();
+            }
+        }
+
         public bool UpdateAttack(AttackEdit model)
         {
             using(var ctx = new ApplicationDbContext())
