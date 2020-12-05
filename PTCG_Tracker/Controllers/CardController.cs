@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using PTCG_Tracker.Models.Card;
+using PTCG_Tracker.Models.CardModels;
 using PTCG_Tracker.Services;
 using System;
 using System.Collections.Generic;
@@ -14,9 +15,9 @@ namespace PTCG_Tracker.Controllers
         // GET: Card
         public ActionResult Index()
         {
-            var search = new CardSearchParams();
+            //var search = new CardSearchParams();
             var service = new CardService();
-            var model = service.GetCards(search);
+            var model = service.GetCards();
             return View(model);
         }
 
@@ -136,5 +137,48 @@ namespace PTCG_Tracker.Controllers
             return service;
 
         }
+
+        //Get: AddCardToCollection
+        public ActionResult AddCard(string cardId)
+        {
+            var cardService = new CardService();
+            var cardModel = cardService.GetCardById(cardId);
+
+            var collectionService = new CollectionService();
+            ViewBag.CollectionId = new SelectList(collectionService.GetAllCollections().ToList(), "CollectionId", "Name");
+            return View(cardModel);
+            
+        }
+        //Post: AddCardToCollection
+        [HttpPost]
+        public ActionResult AddCard(string id,CardCollection model)
+        {
+            var service = CreateCardService();
+            service.AddCardToCollection(model.CollectionId, id);
+
+            return RedirectToAction("Index");
+        }
+        
+        //Get: AddAttackToCard
+        public ActionResult AddAttack(string cardId)
+        {
+            var cardService = new CardService();
+            var cardModel = cardService.GetCardById(cardId);
+
+            var attackService = new AttackService();
+            ViewBag.AttackId = new SelectList(attackService.GetAllAttacks().ToList(), "AttackId", "Name");
+            return View(cardModel);
+        }
+
+        //Post: AddAttackToCard
+        [HttpPost]
+        public ActionResult AddAttack(string id, CardAttack model)
+        {
+            var service = CreateCardService();
+            service.AddAttackToCard(model.AttackId, id);
+
+            return RedirectToAction("Index");
+        }
+
     }
 }

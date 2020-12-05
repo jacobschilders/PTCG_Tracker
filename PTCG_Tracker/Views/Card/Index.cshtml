@@ -60,7 +60,9 @@
     <td>
         @Html.ActionLink("Edit", "Edit", new { id = item.CardId }) |
         @Html.ActionLink("Details", "Details", new { id = item.CardId }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.CardId })
+        @Html.ActionLink("Delete", "Delete", new { id = item.CardId }) |
+        @Html.ActionLink("Add Card to Collection", "AddCard", new { id = item.CardId}) |
+        @Html.ActionLink("Add an Attack", "AddAttack", new { id = item.CardId})
     </td>
 </tr>
 }

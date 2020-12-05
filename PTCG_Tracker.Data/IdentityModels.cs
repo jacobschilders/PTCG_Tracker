@@ -69,6 +69,8 @@ namespace PTCG_Tracker.Data
 
         }
 
+        public System.Data.Entity.DbSet<PTCG_Tracker.Models.Card.CardCollection> CardCollections { get; set; }
+
 
         //public System.Data.Entity.DbSet<PTCG_Tracker.Models.Ability.AbilityCreate> AbilityCreates { get; set; }
 

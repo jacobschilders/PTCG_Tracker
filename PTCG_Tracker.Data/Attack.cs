@@ -18,7 +18,7 @@ namespace PTCG_Tracker.Data
 
         public string Damage { get; set; }
 
-        public List<string> EnergyCost { get; set; }
+        public string EnergyCost { get; set; }
         
         public virtual Card Card { get; set; }
 

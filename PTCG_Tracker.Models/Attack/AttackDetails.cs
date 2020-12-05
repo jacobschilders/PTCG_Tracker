@@ -15,6 +15,6 @@ namespace PTCG_Tracker.Models.Attack
 
         public string Damage { get; set; }
 
-        public List<string> EnergyCost { get; set; }
+        public string EnergyCost { get; set; }
     }
 }

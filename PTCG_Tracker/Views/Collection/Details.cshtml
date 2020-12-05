@@ -64,6 +64,16 @@
             @Html.DisplayFor(model => model.CardsUntilComplete)
         </dd>
 
+            <dt>
+                List of Cards in this Collection
+            </dt>
+        @foreach (var item in Model.Cards)
+        {
+            <dd>
+                @Html.DisplayFor(modelItem => item.Name)
+            </dd>
+        }
+
     </dl>
 </div>
 <p>

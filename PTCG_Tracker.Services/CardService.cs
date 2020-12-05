@@ -48,34 +48,65 @@ namespace PTCG_Tracker.Services
         }
 
         //Add Card to Collection (find collection then add card to it)
-        //public IEnumerable<Card> AddCardToCollection(int collectionId, string cardId)
-        //{
-        //    using(var ctx = new ApplicationDbContext())
-        //    {
-        //        var foundCollection = ctx.Collections.Find(collectionId);
-        //        var addedCard = ctx.Cards.Find(cardId);
+        public bool AddCardToCollection(int collectionId, string cardId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var foundCollection = ctx.Collections.Find(collectionId);
+                var addedCard = ctx.Cards.Find(cardId);
 
-        //        foundCollection.Cards.Add(addedCard);
-        //        //what do I return to save?
-        //        return ctx.SaveChanges() == 1;
+                foundCollection.Cards.Add(addedCard);
+               
+                return ctx.SaveChanges() == 1;
 
-        //    }
-        //}
+            }
+        }
 
-        public IEnumerable<CardListItem> GetCards(CardSearchParams model)
+        public IEnumerable<CardDetails> GetCardsByCollectionId(int collectionId)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var collectedCards = ctx.Collections.Single(c => c.CollectionId == collectionId)
+                    .Cards
+                    .Select(c => new CardDetails
+                    {
+                        CardId = c.CardId,
+                        Name = c.Name,
+                        Rarity = c.Rarity,
+                        SuperType = c.SuperType
+                    });
+                return collectedCards.ToArray();
+            }
+        }
+
+        public bool AddAttackToCard(int attackId, string cardId)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var foundCard = ctx.Cards.Find(cardId);
+                var addedAttack = ctx.Attacks.Find(attackId);
+
+                foundCard.Attacks.Add(addedAttack);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        //[OutputCache(Duration= int.MaxValue, VaryByParam = "model")]
+        public IEnumerable<CardListItem> GetCards(/*CardSearchParams model*/)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var cards = ctx.Cards.AsQueryable();
 
-                if (model.ShowOnlyPokemon)
-                    cards = cards.Where(c => c.SuperType == "Pokemon");
+                //if (model.ShowOnlyPokemon)
+                //    cards = cards.Where(c => c.SuperType == "Pokemon");
 
-                if (model.ShowOnlyTrainers)
-                    cards = cards.Where(c => c.SuperType == "Trainer");
+                //if (model.ShowOnlyTrainers)
+                //    cards = cards.Where(c => c.SuperType == "Trainer");
 
-                if (model.ShowOnlyEnergy)
-                    cards = cards.Where(c => c.SuperType == "Energy");
+                //if (model.ShowOnlyEnergy)
+                //    cards = cards.Where(c => c.SuperType == "Energy");
 
                 return cards.Select(c => new CardListItem
                 {

@@ -1,4 +1,5 @@
 ﻿using PTCG_Tracker.Data;
+using PTCG_Tracker.Models.Card;
 using PTCG_Tracker.Models.Collection;
 using System;
 using System.Collections.Generic;
@@ -53,27 +54,30 @@ namespace PTCG_Tracker.Services
                     {
                         CollectionId = c.CollectionId,
                         Name = c.Name,
-                        CardsInCollection = (int)c.CardsInCollection
+                        //CardsInCollection = (int)c.CardsInCollection
                     }
                     ).ToList();
             }
         }
 
-        public CollectionListItem GetCollectionById(int id)
+        public CollectionDetails GetCollectionById(int id)
         {
             using(var ctx = new ApplicationDbContext())
             {
                 var foundCollection = ctx.Collections.Where(c => c.CollectionId == id)
                     .FirstOrDefault();
+                var cardService = new CardService();
+
                 return (foundCollection != null) ?
-                    new CollectionListItem()
+                    new CollectionDetails ()
                     {
                         CollectionId = foundCollection.CollectionId,
                         Name = foundCollection.Name,
                         Public = foundCollection.Public,
-                        CardsInCollection = (int)foundCollection.CardsInCollection,
+                        //CardsInCollection = (int)foundCollection.CardsInCollection,
                         CardsUntilComplete = foundCollection.CardsUntilComplete,
-                        ModifiedAt = foundCollection.ModifiedAt
+                        Cards = (ICollection<CardDetails>)cardService.GetCardsByCollectionId(id)
+                        //ModifiedAt = foundCollection.ModifiedAt
                         
                     }
                     : null;
