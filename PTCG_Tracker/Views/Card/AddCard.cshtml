@@ -5,12 +5,26 @@
     ViewBag.Title = "AddCard";
 }
 
-<h2>AddCard</h2>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="card text-white bg-dark mb-3 d-inline-block">
+    <div class="card-header">
+        Card/AddCard
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Add Card</h4>
+        <p class="card-text">Add this "Card" to an existing "Collection".</p>
+    </div>
+</div>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>CardCollection</h4>
         <hr />
@@ -20,7 +34,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CollectionId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("CollectionId", null, new { @class="form-control"})
+                @Html.DropDownList("CollectionId", null, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.CollectionId, "", new { @class = "text-danger" })
             </div>
         </div>

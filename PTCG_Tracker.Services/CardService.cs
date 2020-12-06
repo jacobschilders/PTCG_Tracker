@@ -47,7 +47,7 @@ namespace PTCG_Tracker.Services
             }
         }
 
-        //Add Card to Collection (find collection then add card to it)
+       
         public bool AddCardToCollection(int collectionId, string cardId)
         {
             using (var ctx = new ApplicationDbContext())
@@ -73,7 +73,9 @@ namespace PTCG_Tracker.Services
                         CardId = c.CardId,
                         Name = c.Name,
                         Rarity = c.Rarity,
-                        SuperType = c.SuperType
+                        SuperType = c.SuperType,
+                        Set = c.Set,
+                        Series = c.Series
                     });
                 return collectedCards.ToArray();
             }
@@ -123,35 +125,36 @@ namespace PTCG_Tracker.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var card = ctx.Cards.Where(c => c.CardId == id)
-                    .Include(c => c.Weakness)
-                    .Include(c => c.Resistance)
                     .FirstOrDefault();
 
                 if (card == null) return null;
+
                 var attackService = new AttackService();
-                var collectionService = new CollectionService();
+                
+                var allAttacks = attackService.GetAttacksByCardId(id);
+                
 
                 return new CardDetails()
-                {
-                    CardId = card.CardId,
-                    Name = card.Name,
-                    ImageURL = card.ImageURL,
-                    Type = card.Type,
-                    SuperType = card.SuperType,
-                    HP = card.HP,
-                    RetreatCost = card.RetreatCost,
-                    SetNumber = card.SetNumber,
-                    Series = card.Series,
-                    Set = card.Set,
-                    WeaknessId = (int)card.WeaknessId,
-                    ResistanceId = (int)card.ResistanceId,
-                    AbilityId = (int)card.AbilityId,
-                    Artist = card.Artist,
-                    Rarity = card.Rarity,
-                    Attacks = (ICollection<AttackDetails>)attackService.GetAttacksByCardId(id),
-                    Collections = (ICollection<CollectionDetails>)collectionService.GetCollectionByCardId(id)
-                    
-                };
+                    {
+                        CardId = card.CardId,
+                        Name = card.Name,
+                        ImageURL = card.ImageURL,
+                        Type = card.Type,
+                        SuperType = card.SuperType,
+                        HP = card.HP,
+                        RetreatCost = card.RetreatCost,
+                        SetNumber = card.SetNumber,
+                        Series = card.Series,
+                        Set = card.Set,
+                        WeaknessId = (int)card.WeaknessId,
+                        ResistanceId = (int)card.ResistanceId,
+                        AbilityId = (int)card.AbilityId,
+                        Artist = card.Artist,
+                        Rarity = card.Rarity,
+                        Attacks = (ICollection<AttackDetails>)allAttacks,
+                        
+                    };
+                
             }
         }
 

@@ -37,30 +37,35 @@
         <th>
             @Html.DisplayNameFor(model => model.Damage)
         </th>
-        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnergyCost)
+        </th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.AttackId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Text)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Damage)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.AttackId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.AttackId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.AttackId })
-            </td>
-        </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.AttackId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Text)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Damage)
+    </td>
+    <th>
+        @Html.DisplayFor(modelItem => item.EnergyCost)
+    </th>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.AttackId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.AttackId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.AttackId })
+    </td>
+</tr>
     }
 
 </table>

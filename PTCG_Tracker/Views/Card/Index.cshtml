@@ -1,4 +1,4 @@
-﻿@model IEnumerable<PTCG_Tracker.Models.Card.CardListItem>
+﻿ @model IEnumerable<PTCG_Tracker.Models.Card.CardListItem>
 
 @{
     ViewBag.Title = "Index";
@@ -41,6 +41,12 @@
         <th>
             @Html.DisplayNameFor(model => model.SuperType)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Series)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Set)
+        </th>
     </tr>
 
 @foreach (var item in Model) {
@@ -58,11 +64,17 @@
         @Html.DisplayFor(modelItem => item.SuperType)
     </td>
     <td>
+        @Html.DisplayFor(modelItem => item.Series)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Set)
+    </td>
+    <td>
         @Html.ActionLink("Edit", "Edit", new { id = item.CardId }) |
         @Html.ActionLink("Details", "Details", new { id = item.CardId }) |
         @Html.ActionLink("Delete", "Delete", new { id = item.CardId }) |
-        @Html.ActionLink("Add Card to Collection", "AddCard", new { id = item.CardId}) |
-        @Html.ActionLink("Add an Attack", "AddAttack", new { id = item.CardId})
+        @Html.ActionLink("Add Card to Collection", "AddCard", new { id = item.CardId }) |
+        @Html.ActionLink("Add an Attack", "AddAttack", new { id = item.CardId })
     </td>
 </tr>
 }
