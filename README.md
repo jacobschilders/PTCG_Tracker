@@ -19,7 +19,7 @@ https://ptcgtracker.azurewebsites.net/
 
 ## Usage
 
-```python
+```c#
 C# 
 HTML 5
 CSS 3
